@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Boas vindas!</title>
+	<style type="text/css">
+		*{
+			scroll-behavior: smooth;
+		}
+		.space{
+			height: 2000px;
+		}
+		img{
+			height: 600px;
+			display: inline-block;
+		}
+		.info{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<section id="00">
+		<div>
+			<p style="float: right;"><a href="#dev">Sobre o desenvolvedor responsável</a></p>
+		</div>
+	</section>
+	<h4>Seja muito bem vindo !<br>Lhe faremos algumas perguntas para personalizar a sua página ok?</h4>
+	<section id="formulário">
+		<div class="form">
+			<form name="exercicio">
+				<label for="nome">Nome:</label><br>
+				<input type="text" name="nome" required><br>
+				<label for="estilo" required>Estilo Musical:</label><br>
+				<input type="text" name="estilo"><br>
+			</form>
+				<button onclick="funcEnviar()">enviar!</button>
+		</div>
+
+		<div class="after-submit">
+			<p id="after"></p>
+		</div>
+	</section>
+	<section class="space"></section>
+
+	<section id="dev">
+		<div class="info">
+			<img src="https://scontent.fldb3-1.fna.fbcdn.net/v/t1.0-9/123974504_3919135338134359_9090586238389757158_o.jpg?_nc_cat=109&ccb=2&_nc_sid=730e14&_nc_ohc=AvQpS1bne_UAX9jZZz6&_nc_ht=scontent.fldb3-1.fna&oh=2b1136168ce779ad072a990a9324b8ce&oe=5FEE43A0">
+			<h3>Um pouco sobre mim, sim, sou esse mario bugado ai, tenho 28 anos e amo essa área, prof me da nota máxima pfv <3 </h3>
+			<p style="float: right;"><a href="#00">voltar ao topo</a></p>
+		</div>
+	</section>
+	<script type="text/javascript">
+		funcEnviar = function (nome, estilo) {
+			let x = document.forms['exercicio']['nome'].value
+			let y = document.forms['exercicio']['estilo'].value
+			let z = `Olá, seja muito bem vindo(a), ${y} ${x} !`
+			document.getElementById('after').innerHTML = z
+
+			document.forms['exercicio']['nome'].value = ''
+			document.forms['exercicio']['estilo'].value = ''
+		}
+	</script>
+</body>
+</html>
